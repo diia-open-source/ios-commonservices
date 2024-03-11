@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--General Error View Controller-->
+        <scene sceneID="bbc-sB-5Zg">
+            <objects>
+                <viewController storyboardIdentifier="GeneralErrorViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fM1-uY-1EZ" customClass="GeneralErrorViewController" customModule="DiiaCommonServices" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F57-My-s4f">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tza-TW-JUK">
+                                <rect key="frame" x="24" y="311" width="366" height="274"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="5HI-gi-t9j">
+                                        <rect key="frame" x="24" y="32" width="318" height="114"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😞" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kb9-n2-6LB">
+                                                <rect key="frame" x="147.5" y="0.0" width="23" height="20.5"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Закінчився термін очікування відповіді]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jol-QM-saz">
+                                                <rect key="frame" x="76" y="36.5" width="166" height="41"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51b-zl-pWf">
+                                                <rect key="frame" x="152" y="93.5" width="14" height="20.5"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6A-Jd-8B5">
+                                        <rect key="frame" x="312" y="10" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="8CE-el-Fl2"/>
+                                            <constraint firstAttribute="width" constant="44" id="Z7r-8F-dld"/>
+                                        </constraints>
+                                        <state key="normal" image="lightCloseIcon"/>
+                                        <connections>
+                                            <action selector="close:" destination="fM1-uY-1EZ" eventType="touchUpInside" id="xWv-nQ-Mh4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTd-j9-USl" customClass="VerticalRoundButton" customModule="DiiaUIComponents">
+                                        <rect key="frame" x="160" y="178" width="46" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="FwW-K1-qze"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="actionButtonTapped" destination="fM1-uY-1EZ" eventType="touchUpInside" id="nix-Rb-j61"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="bTd-j9-USl" firstAttribute="top" secondItem="5HI-gi-t9j" secondAttribute="bottom" constant="32" id="8rC-lI-oPF"/>
+                                    <constraint firstItem="5HI-gi-t9j" firstAttribute="leading" secondItem="tza-TW-JUK" secondAttribute="leading" constant="24" id="EGw-pT-eVy"/>
+                                    <constraint firstItem="c6A-Jd-8B5" firstAttribute="top" secondItem="tza-TW-JUK" secondAttribute="top" constant="10" id="QTE-it-MD4"/>
+                                    <constraint firstAttribute="trailing" secondItem="5HI-gi-t9j" secondAttribute="trailing" constant="24" id="SoY-1g-BCy"/>
+                                    <constraint firstAttribute="trailing" secondItem="c6A-Jd-8B5" secondAttribute="trailing" constant="10" id="T2G-To-QLE"/>
+                                    <constraint firstAttribute="bottom" secondItem="bTd-j9-USl" secondAttribute="bottom" constant="40" id="VPk-1P-sxm"/>
+                                    <constraint firstItem="bTd-j9-USl" firstAttribute="centerX" secondItem="tza-TW-JUK" secondAttribute="centerX" id="gLw-if-iJM"/>
+                                    <constraint firstItem="5HI-gi-t9j" firstAttribute="top" secondItem="tza-TW-JUK" secondAttribute="top" constant="32" id="lYB-8M-ped"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dkR-jj-NL6"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dkR-jj-NL6" firstAttribute="trailing" secondItem="tza-TW-JUK" secondAttribute="trailing" constant="24" id="Vl6-FT-iQ9"/>
+                            <constraint firstItem="tza-TW-JUK" firstAttribute="centerY" secondItem="F57-My-s4f" secondAttribute="centerY" id="gX0-2P-KZR"/>
+                            <constraint firstItem="tza-TW-JUK" firstAttribute="leading" secondItem="dkR-jj-NL6" secondAttribute="leading" constant="24" id="mkd-2G-xTS"/>
+                            <constraint firstItem="tza-TW-JUK" firstAttribute="centerX" secondItem="F57-My-s4f" secondAttribute="centerX" id="r5e-cV-gBx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="actionButton" destination="bTd-j9-USl" id="Yb7-BI-6NX"/>
+                        <outlet property="closeButton" destination="c6A-Jd-8B5" id="axS-VS-R52"/>
+                        <outlet property="descriptionLabel" destination="51b-zl-pWf" id="xyL-wg-ojH"/>
+                        <outlet property="emojiLabel" destination="kb9-n2-6LB" id="PTO-oP-3a1"/>
+                        <outlet property="errorView" destination="tza-TW-JUK" id="nF6-Jo-kBH"/>
+                        <outlet property="titleLabel" destination="jol-QM-saz" id="5PH-om-RsH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kHM-gY-jU5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="111.59420289855073" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="lightCloseIcon" width="16" height="16"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

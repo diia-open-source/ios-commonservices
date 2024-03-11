@@ -1,0 +1,20 @@
+
+# UI
+- .*ViewController.*.swift
+- .*Cell.*.swift
+
+# General
+- .*Module.swift
+
+# No any logic
+- AlertTemplate+Extension.swift
+- ContactsInputHandler.swift
+- RoutingHandlerProtocol.swift
+- .*Model.swift
+
+# Resource Files
+- R+Strings.swift
+- R+Image.swift
+
+# Other
+- ReachabilityHelper.swift

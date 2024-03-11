@@ -1,0 +1,12 @@
+.DS_Store
+/.build
+/Packages
+xcuserdata/
+.swiftpm/config/registries.json
+.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+.netrc
+/DerivedData
+
+# automation stuff
+Scripts/xcove_output
+

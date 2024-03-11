@@ -1,0 +1,34 @@
+/*
+  Localizable.strings
+*/
+
+// MARK: - General
+"general_next" = "Далі";
+"general_retry" = "Спробувати ще";
+"general_ok" = "Зрозуміло";
+"permissions_exit" = "Закрити";
+
+// MARK: - Errors
+"error_otp_timeout" = "Закінчився термін очікування відповіді";
+"error_request_not_found" = "Запит не зареєстровано у Дії";
+"error_no_internet" = "Немає інтернету";
+"error_no_internet_description" = "Перевірте з’єднання та спробуйте ще раз";
+"error_server_error" = "На жаль,\nсталася помилка";
+"error_no_registry_access" = "Немає доступу\nдо реєстру";
+"error_doc_not_found" = "За вашим запитом не знайдено жодного документа";
+"error_attempts_exhausted" = "Кількість спроб вичерпано";
+"error_doc_already_exist" = "Документ з такими\nпараметрами вже\nдоданий раніше";
+"error_payment_sum_changed" = "Сума до сплати змінилася";
+"error_acquirer_doc_absent" = "Запит містить відсутні в Дії документи";
+"error_code_expired" = "Час дії коду закінчився";
+"error_no_reauth_methods" = "Немає доступних\nспособів\nпідтвердження особи";
+"error_camera" = "Сталася помилка при роботі з камерою";
+"error_try_later" = "Спробуйте, будь ласка, пізніше";
+
+// MARK: - ContactsInput
+"contacts_input_title" = "Контактні дані";
+"contacts_input_filled_from_bank_id" = "Ми заповнили дані з вашого BankID. Будь ласка, перевірте їх та змініть за потреби.";
+"contacts_input_contact_phone" = "Контактний номер телефону";
+"contacts_input_wrong_phone" = "Невірно введений номер";
+"contacts_input_contact_email" = "Email";
+"contacts_input_wrong_email" = "Невірно введений email";

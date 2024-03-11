@@ -1,0 +1,32 @@
+{
+  "configurations" : [
+    {
+      "id" : "F19FDC7D-3C1E-485F-AC01-A9A4A2D92076",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:",
+          "identifier" : "DiiaCommonServices",
+          "name" : "DiiaCommonServices"
+        }
+      ]
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "DiiaCommonServicesTests",
+        "name" : "DiiaCommonServicesTests"
+      }
+    }
+  ],
+  "version" : 1
+}

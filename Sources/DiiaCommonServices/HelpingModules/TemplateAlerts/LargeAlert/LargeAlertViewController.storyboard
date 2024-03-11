@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Large Alert View Controller-->
+        <scene sceneID="h6K-A8-N9g">
+            <objects>
+                <viewController storyboardIdentifier="LargeAlertViewController" id="h8Q-Vr-9Xp" customClass="LargeAlertViewController" customModule="DiiaCommonServices" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gZu-V7-nwo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ji-aD-yGx">
+                                <rect key="frame" x="24" y="307" width="366" height="282.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="B3l-6R-O3M">
+                                        <rect key="frame" x="32" y="32" width="302" height="122.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lg9-RU-KRF">
+                                                <rect key="frame" x="0.0" y="0.0" width="302" height="20.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="☝" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5J-c4-TLS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="23" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qd3-bs-dkA">
+                                                        <rect key="frame" x="31" y="0.0" width="271" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ao8-g5-VBO">
+                                                <rect key="frame" x="0.0" y="36.5" width="302" height="86"/>
+                                                <string key="text">[Будь ласка, підтвердьте особу користувача за допомогою фотоперевірки.
+
+Ми дбаємо про безпеку ваших персональних даних та хочемо впевнитися, що дані із застосунку доступні тільки вам.]</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="110" placeholderIntrinsicHeight="59" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6qv-63-Gr3">
+                                        <rect key="frame" x="128" y="186.5" width="110" height="56"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mh-w3-B9v" customClass="VerticalRoundButton" customModule="DiiaUIComponents">
+                                                <rect key="frame" x="0.0" y="0.0" width="110" height="56"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="56" id="S4H-25-oCL"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
+                                                <state key="normal" title="[Button]">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mainButtonTapped" destination="h8Q-Vr-9Xp" eventType="touchUpInside" id="Scr-ia-piA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="6qv-63-Gr3" firstAttribute="centerX" secondItem="5ji-aD-yGx" secondAttribute="centerX" id="Bx9-YI-GUq"/>
+                                    <constraint firstItem="B3l-6R-O3M" firstAttribute="top" secondItem="5ji-aD-yGx" secondAttribute="top" constant="32" id="EHd-5h-hzs"/>
+                                    <constraint firstAttribute="trailing" secondItem="B3l-6R-O3M" secondAttribute="trailing" constant="32" id="NDR-tE-r2G"/>
+                                    <constraint firstItem="B3l-6R-O3M" firstAttribute="leading" secondItem="5ji-aD-yGx" secondAttribute="leading" constant="32" id="dGd-L0-n1b"/>
+                                    <constraint firstAttribute="bottom" secondItem="6qv-63-Gr3" secondAttribute="bottom" constant="40" id="spo-zE-Ixv"/>
+                                    <constraint firstItem="6qv-63-Gr3" firstAttribute="top" secondItem="B3l-6R-O3M" secondAttribute="bottom" constant="32" id="vmO-4y-z3c"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bcd-gc-0nU"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5ji-aD-yGx" firstAttribute="centerY" secondItem="gZu-V7-nwo" secondAttribute="centerY" id="FLJ-Wv-hGG"/>
+                            <constraint firstItem="bcd-gc-0nU" firstAttribute="trailing" secondItem="5ji-aD-yGx" secondAttribute="trailing" constant="24" id="JrV-3q-L0V"/>
+                            <constraint firstItem="5ji-aD-yGx" firstAttribute="centerX" secondItem="gZu-V7-nwo" secondAttribute="centerX" id="QrQ-5t-dpo"/>
+                            <constraint firstItem="5ji-aD-yGx" firstAttribute="leading" secondItem="bcd-gc-0nU" secondAttribute="leading" constant="24" id="cEb-cB-avd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonsBottomConstraint" destination="spo-zE-Ixv" id="TKW-C4-yqY"/>
+                        <outlet property="buttonsStackView" destination="6qv-63-Gr3" id="XDu-XV-DOA"/>
+                        <outlet property="cardView" destination="5ji-aD-yGx" id="RmE-my-bMc"/>
+                        <outlet property="descriptionLabel" destination="Ao8-g5-VBO" id="2r1-5R-QUc"/>
+                        <outlet property="iconLabel" destination="W5J-c4-TLS" id="8zj-ag-mw3"/>
+                        <outlet property="mainButton" destination="7mh-w3-B9v" id="Nru-s7-Wnc"/>
+                        <outlet property="titleLabel" destination="Qd3-bs-dkA" id="eNN-Tr-RjP"/>
+                        <outlet property="titleStackView" destination="lg9-RU-KRF" id="vfp-nt-JxZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CMd-gk-rkT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="310" y="-70"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
