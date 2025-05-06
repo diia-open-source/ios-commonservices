@@ -6,13 +6,14 @@
 "general_next" = "Далі";
 "general_retry" = "Спробувати ще";
 "general_ok" = "Зрозуміло";
+"general_save" = "Зберегти";
 "permissions_exit" = "Закрити";
 
 // MARK: - Errors
 "error_otp_timeout" = "Закінчився термін очікування відповіді";
 "error_request_not_found" = "Запит не зареєстровано у Дії";
 "error_no_internet" = "Немає інтернету";
-"error_no_internet_description" = "Перевірте з’єднання та спробуйте ще раз";
+"error_no_internet_description" = "Перевірте з’єднання та спробуйте ще раз.";
 "error_server_error" = "На жаль,\nсталася помилка";
 "error_no_registry_access" = "Немає доступу\nдо реєстру";
 "error_doc_not_found" = "За вашим запитом не знайдено жодного документа";
@@ -24,6 +25,7 @@
 "error_no_reauth_methods" = "Немає доступних\nспособів\nпідтвердження особи";
 "error_camera" = "Сталася помилка при роботі з камерою";
 "error_try_later" = "Спробуйте, будь ласка, пізніше";
+"error_close" = "Закрити";
 
 // MARK: - ContactsInput
 "contacts_input_title" = "Контактні дані";
@@ -31,4 +33,12 @@
 "contacts_input_contact_phone" = "Контактний номер телефону";
 "contacts_input_wrong_phone" = "Невірно введений номер";
 "contacts_input_contact_email" = "Email";
-"contacts_input_wrong_email" = "Невірно введений email";
+"contacts_input_wrong_email" = "Упс, ви ввели неправильний email. Виправте дані або спробуйте іншу пошту.";
+"contacts_input_wrong_ru_email" = "Йой, це ж електронна адреса з російським доменом. Ми не можемо її прийняти. Спробуйте іншу скриньку, будь ласка.";
+
+// MARK: - Single selection
+"single_selection_default_title" = "Пошук";
+"single_selection_default_placeholder" = "Пошук";
+"single_selection_empty_results_title" = "За цим запитом нічого не знайдено";
+"single_selection_empty_results_subtitle" = "Проте ви можете спробувати пошукати за іншою адресою";
+"address_search_title" = "Вкажіть адресу";

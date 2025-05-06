@@ -1,5 +1,4 @@
 import UIKit
-import ReactiveKit
 import DiiaMVPModule
 import DiiaUIComponents
 import DiiaCommonTypes
@@ -26,7 +25,6 @@ final class ContactsInputPresenter: ContactsInputAction {
     private let urlOpener: URLOpenerProtocol?
     
     private var didRetry = false
-    private let disposeBag = DisposeBag()
     
     private var contactTypes: Set<ContactInputType>
     private var phone = ""
@@ -67,7 +65,7 @@ final class ContactsInputPresenter: ContactsInputAction {
     }
     
     func isAvailableNextButton() -> Bool {
-        return (!contactTypes.contains(.email) || email.isValidEmail)
+        return (!contactTypes.contains(.email) || email.isValidNonRussianEmail)
         && (!contactTypes.contains(.phone) || phone.isValidUkrainianMobileNumber)
     }
     
@@ -86,7 +84,7 @@ final class ContactsInputPresenter: ContactsInputAction {
             view.highlightPhone(isCorrect: phoneCleared.isValidUkrainianMobileNumber)
         }
         if !email.isEmpty {
-            view.highlightEmail(isCorrect: email.isValidEmail)
+            view.highlightEmail(isCorrect: email.isValidEmail, isNotRuMail: email.isValidNonRussianEmail)
         }
     }
     

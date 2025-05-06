@@ -56,7 +56,7 @@ class TemplateHandlerTests: XCTestCase {
                                                  mainButton: .init(title: nil,
                                                                    icon: nil,
                                                                    action: .internalLink,
-                                                                   link: "https://test.com"),
+                                                                   resource: "https://test.com"),
                                                  alternativeButton: nil)),
                                in: view,
                                callback: { _ in })
@@ -86,7 +86,7 @@ class TemplateHandlerTests: XCTestCase {
                                                  mainButton: .init(title: nil,
                                                                    icon: nil,
                                                                    action: .externalLink,
-                                                                   link: "https://test.com"),
+                                                                   resource: "https://test.com"),
                                                  alternativeButton: nil)),
                                in: view,
                                callback: { _ in })

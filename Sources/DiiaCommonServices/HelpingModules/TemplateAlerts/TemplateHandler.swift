@@ -38,9 +38,10 @@ public class TemplateHandler {
         let module: BaseModule
         
         let callbackWithGlobalActions: (AlertTemplateAction) -> Void = { action in
+            state = .default
             handleAction(
                 action: action,
-                link: actionButtonWithAction(action: action, in: template)?.link,
+                resource: actionButtonWithAction(action: action, in: template)?.resource,
                 genericCallback: callback)
         }
         
@@ -94,29 +95,34 @@ public class TemplateHandler {
         
         let module: BaseModule
         
+        let commonCallback: (AlertTemplateAction) -> Void = { action in
+            state = .default
+            callback(action)
+        }
+        
         switch template.type {
         case .middleLeftAlignAlert:
             module = MiddleLeftAlignAlertModule(
                 viewModel: viewModel,
-                callback: callback,
+                callback: commonCallback,
                 onClose: { state = .default }
             )
         case .largeAlert:
             module = LargeAlertModule(
                 viewModel: viewModel,
-                callback: callback,
+                callback: commonCallback,
                 onClose: { state = .default }
             )
         case .smallAlert, .middleCenterAlignAlert:
             module = SmallAlertModule(
                 viewModel: viewModel,
-                callback: callback,
+                callback: commonCallback,
                 onClose: { state = .default }
             )
         case .middleCenterBlackButtonAlert:
             module = SmallAlertModule(
                 viewModel: viewModel,
-                callback: callback,
+                callback: commonCallback,
                 onClose: { state = .default },
                 mainButtonType: .solid
             )
@@ -139,22 +145,26 @@ public class TemplateHandler {
         return buttons.first(where: { $0.action == action })
     }
     
-    private static func handleAction(action: AlertTemplateAction, link: String?, genericCallback: (AlertTemplateAction) -> Void) {
+    private static func handleAction(action: AlertTemplateAction, resource: String?, genericCallback: (AlertTemplateAction) -> Void) {
         switch action {
         case .internalLink:
-            guard let link = link, let url = URL(string: link) else { return }
+            guard let resource = resource, let url = URL(string: resource) else { return }
             _ = deepLinkManager?.parse(url: url)
         case .externalLink:
-            guard let link = link else { return }
-            _ = communicationHelper?.url(urlString: link, linkType: nil)
+            guard let resource = resource else { return }
+            _ = communicationHelper?.url(urlString: resource, linkType: nil)
         case .vehicleExternalLink:
-            genericCallback(action)
-            guard let link = link else { return }
-            _ = communicationHelper?.url(urlString: link, linkType: nil)
+            guard let resource = resource else { return }
+            _ = communicationHelper?.url(urlString: resource, linkType: nil)
         case .publicServices:
             router?.popToPublicServices()
+        case .feed:
+            router?.popToFeed()
+        case .documents:
+            router?.popToDocuments()
         default:
-            genericCallback(action)
+            break
         }
+        genericCallback(action)
     }
 }

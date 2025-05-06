@@ -25,6 +25,7 @@ final class GeneralErrorViewController: UIViewController, ChildSubcontroller, St
         super.viewDidLoad()
         
         initialSetup()
+        setupAccessibility()
         presenter.configureView()
     }
     
@@ -41,6 +42,22 @@ final class GeneralErrorViewController: UIViewController, ChildSubcontroller, St
         
         actionButton.setTitleColor(.black, for: .normal)
         actionButton.titleLabel?.font = FontBook.smallHeadingFont
+    }
+    
+    private func setupAccessibility() {
+        UIAccessibility.post(notification: .screenChanged, argument: self)
+        
+        emojiLabel.isAccessibilityElement = false
+        
+        titleLabel.isAccessibilityElement = true
+        
+        descriptionLabel.isAccessibilityElement = true
+        
+        actionButton.isAccessibilityElement = true
+        actionButton.accessibilityTraits = .button
+        
+        closeButton.isAccessibilityElement = true
+        closeButton.accessibilityTraits = .button
     }
     
     // MARK: - Private Methods
@@ -61,9 +78,11 @@ final class GeneralErrorViewController: UIViewController, ChildSubcontroller, St
 extension GeneralErrorViewController: GeneralErrorView {
     func configure(with viewModel: GeneralErrorViewModel) {
         titleLabel.text = viewModel.error.localizedDescription
+        titleLabel.accessibilityLabel = viewModel.error.localizedDescription
         
         descriptionLabel.isHidden = viewModel.error.localizedDetails == nil
         descriptionLabel.text = viewModel.error.localizedDetails
+        descriptionLabel.accessibilityLabel = viewModel.error.localizedDetails
         
         let buttonTitle = viewModel.isRetryAllowed
         ? (viewModel.buttonTitle ?? R.Strings.general_retry.localized())
@@ -71,6 +90,7 @@ extension GeneralErrorViewController: GeneralErrorView {
         
         actionButton.setTitle(buttonTitle, for: .normal)
         
+        closeButton.accessibilityLabel = R.Strings.error_close.localized()
         closeButton.isHidden = viewModel.notClosable
             ? true
             : !viewModel.isRetryAllowed

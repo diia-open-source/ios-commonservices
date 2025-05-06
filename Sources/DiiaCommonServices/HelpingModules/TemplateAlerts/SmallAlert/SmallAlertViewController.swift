@@ -54,6 +54,7 @@ public final class SmallAlertViewController: UIViewController, ChildSubcontrolle
         setupUI()
         handleMainButton(with: mainButtonType)
         setupButtons()
+        setupAccessibility()
     }
     
     private func setupFonts() {
@@ -85,6 +86,20 @@ public final class SmallAlertViewController: UIViewController, ChildSubcontrolle
         }
     }
     
+    private func setupAccessibility() {
+        UIAccessibility.post(notification: .screenChanged, argument: self)
+        
+        titleLabel.isAccessibilityElement = true
+        
+        descriptionLabel.isAccessibilityElement = true
+        
+        mainButton.isAccessibilityElement = true
+        mainButton.accessibilityTraits = .button
+        
+        alternativeButton.isAccessibilityElement = true
+        alternativeButton.accessibilityTraits = .button
+    }
+    
     // MARK: - Private Methods
     @IBAction private func closeButtonTapped() {
         presenter.close()
@@ -103,7 +118,10 @@ public final class SmallAlertViewController: UIViewController, ChildSubcontrolle
 extension SmallAlertViewController: TemplateAlertView {
     public func configure(with viewModel: AlertViewModel) {
         titleLabel.text = viewModel.title
+        titleLabel.accessibilityLabel = viewModel.title
+        
         descriptionLabel.text = viewModel.description
+        descriptionLabel.accessibilityLabel = viewModel.description
         descriptionLabel.isHidden = viewModel.description.count == 0
         
         mainButton.setTitle(viewModel.mainButton.title, for: .normal)
@@ -118,6 +136,7 @@ extension SmallAlertViewController: TemplateAlertView {
         }
         
         if viewModel.hasAlternativeButton {
+            alternativeButton.accessibilityLabel = viewModel.alternativeButton?.title
             alternativeButton.setTitle(viewModel.alternativeButton?.title, for: .normal)
             alternativeButton.setImage(viewModel.alternativeButton?.image, for: .normal)
             buttonsStackView.addArrangedSubview(alternativeButton)

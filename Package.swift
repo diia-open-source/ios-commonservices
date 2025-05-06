@@ -7,7 +7,7 @@ let package = Package(
     name: "DiiaCommonServices",
     defaultLocalization: "uk",
     platforms: [
-        .iOS(.v11)
+        .iOS(.v12)
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
@@ -32,7 +32,6 @@ let package = Package(
                 .product(name: "DiiaNetwork", package: "ios-network"),
                 .product(name: "DiiaUIComponents", package: "ios-uicomponents"),
                 .product(name: "DiiaCommonTypes", package: "ios-commontypes"),
-
             ]),
         .testTarget(
             name: "DiiaCommonServicesTests",

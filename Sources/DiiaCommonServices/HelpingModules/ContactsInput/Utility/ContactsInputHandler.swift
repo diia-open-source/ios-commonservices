@@ -9,7 +9,7 @@ public enum ContactInputType: String {
     public func isValid(text: String) -> Bool {
         switch self {
         case .email:
-            return text.isValidEmail
+            return text.isValidEmail && text.isValidNonRussianEmail
         case .phone:
             return text.isValidPhoneNumber
         }

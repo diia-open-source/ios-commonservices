@@ -45,19 +45,13 @@ final class TemplateAlertPresenter: TemplateAlertAction {
     }
     
     func onMainButton() {
-        if AlertTemplateAction.closableCases.contains(viewModel.mainButton.action) {
-            view.close()
-            onClose()
-        }
+        view.close()
         callback(viewModel.mainButton.action)
     }
     
     func onAlternativeButton() {
+        view.close()
         guard let action = viewModel.alternativeButton?.action else { return }
-        if AlertTemplateAction.closableCases.contains(action) {
-            view.close()
-            onClose()
-        }
         callback(action)
     }
 }

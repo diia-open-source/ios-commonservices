@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -79,7 +79,8 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="(000) 123 45 67" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jCz-uX-yTF">
-                                                                    <rect key="frame" x="31.5" y="34.5" width="302.5" height="35"/>
+                                                                    <rect key="frame" x="35" y="34.5" width="299" height="35"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad"/>
                                                                 </textField>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ps2-kT-ZeG" userLabel="Separator">
@@ -90,7 +91,8 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+38" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Pq-m6-aLA">
-                                                                    <rect key="frame" x="0.0" y="43.5" width="27.5" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="42" width="31" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -131,6 +133,7 @@
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="hello@diia.gov.ua" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vKE-e5-1nw">
                                                                     <rect key="frame" x="0.0" y="34.5" width="334" height="37"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                                                                 </textField>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lXM-xY-1n3" userLabel="Separator">
@@ -140,8 +143,8 @@
                                                                         <constraint firstAttribute="height" constant="2" id="mht-hR-vwd"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Невірно введений email]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dH-FI-y7U">
-                                                                    <rect key="frame" x="0.0" y="79.5" width="201.5" height="20.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Невірно введений email]" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dH-FI-y7U">
+                                                                    <rect key="frame" x="0.0" y="79.5" width="334" height="20.5"/>
                                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -161,6 +164,7 @@
                                                                 <constraint firstItem="lXM-xY-1n3" firstAttribute="top" secondItem="vKE-e5-1nw" secondAttribute="bottom" constant="6" id="oOa-85-vyb"/>
                                                                 <constraint firstItem="lXM-xY-1n3" firstAttribute="leading" secondItem="Oti-XE-sNG" secondAttribute="leading" id="qGX-BA-kGo"/>
                                                                 <constraint firstItem="5dH-FI-y7U" firstAttribute="leading" secondItem="Oti-XE-sNG" secondAttribute="leading" id="r1W-Mc-8nD"/>
+                                                                <constraint firstAttribute="trailing" secondItem="5dH-FI-y7U" secondAttribute="trailing" id="uMZ-LD-Rt2"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>

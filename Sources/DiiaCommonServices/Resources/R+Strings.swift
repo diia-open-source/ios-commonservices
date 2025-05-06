@@ -6,6 +6,7 @@ enum R {
         case general_next
         case general_retry
         case general_ok
+        case general_save
         case permissions_exit
         
         // MARK: - Errors
@@ -24,6 +25,7 @@ enum R {
         case error_no_reauth_methods
         case error_camera
         case error_try_later
+        case error_close
         
         // MARK: - ContactsInput
         case contacts_input_title
@@ -32,7 +34,15 @@ enum R {
         case contacts_input_wrong_phone
         case contacts_input_contact_email
         case contacts_input_wrong_email
+        case contacts_input_wrong_ru_email
         
+        // MARK: - Single selection
+        case single_selection_default_title
+        case single_selection_default_placeholder
+        case single_selection_empty_results_title
+        case single_selection_empty_results_subtitle
+        case address_search_title
+
         func localized() -> String {
             let localized = NSLocalizedString(rawValue, bundle: Bundle.module, comment: "")
             return localized

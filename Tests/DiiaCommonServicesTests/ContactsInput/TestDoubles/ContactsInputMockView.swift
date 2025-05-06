@@ -33,7 +33,7 @@ class ContactsInputMockView: UIViewController, ContactsInputView {
         isHighlightPhoneCalled.toggle()
     }
     
-    func highlightEmail(isCorrect: Bool) {
+    func highlightEmail(isCorrect: Bool, isNotRuMail: Bool) {
         isHighlightEmailCalled.toggle()
     }
     

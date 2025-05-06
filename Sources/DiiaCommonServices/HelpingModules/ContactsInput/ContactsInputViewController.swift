@@ -9,7 +9,7 @@ protocol ContactsInputView: ContactsInputViewProtocol, RatingFormHolder {
     func setButtonAvailability(isAvailable: Bool)
     func setURLOpener(urlOpener: URLOpenerProtocol?)
     func highlightPhone(isCorrect: Bool)
-    func highlightEmail(isCorrect: Bool)
+    func highlightEmail(isCorrect: Bool, isNotRuMail: Bool)
 }
 
 final class ContactsInputViewController: UIViewController, RatingFormHolder {
@@ -129,10 +129,11 @@ final class ContactsInputViewController: UIViewController, RatingFormHolder {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         scrollView.addGestureRecognizer(tapRecognizer)
         scrollView.isUserInteractionEnabled = true
-        keyboardHandler = KeyboardHandler(type: .constraint(constraint: actionButtonBottomConstraint,
-                                                            withoutInset: DiiaUIComponents.AppConstants.Layout.buttonBottomOffset,
-                                                            keyboardInset: DiiaUIComponents.AppConstants.Layout.buttonKeyboardOffset,
-                                                            superview: view))
+        keyboardHandler = KeyboardHandler(type: .constraint(
+            constraint: actionButtonBottomConstraint,
+            withoutInset: DiiaUIComponents.AppConstants.Layout.buttonBottomOffset,
+            keyboardInset: DiiaUIComponents.AppConstants.Layout.buttonKeyboardOffset,
+            superview: view))
     }
     
     // MARK: - Actions
@@ -171,9 +172,9 @@ extension ContactsInputViewController: ContactsInputView {
     
     func setSendingState(state: LoadingState, title: String?) {
         let buttonState: LoadingStateButton.LoadingState = state == .loading
-            ? .solidLoading
+            ? .loading
             : presenter.isAvailableNextButton()
-                ? .solid
+                ? .enabled
                 : .disabled
         actionButton.setLoadingState(buttonState, withTitle: title ?? presenter.buttonTitle())
         emailTextField.isUserInteractionEnabled = state == .ready
@@ -211,7 +212,7 @@ extension ContactsInputViewController: ContactsInputView {
     }
     
     func setButtonAvailability(isAvailable: Bool) {
-        actionButton.setLoadingState(isAvailable ? .solid : .disabled)
+        actionButton.setLoadingState(isAvailable ? .enabled : .disabled)
     }
     
     func setURLOpener(urlOpener: URLOpenerProtocol?) {
@@ -231,9 +232,15 @@ extension ContactsInputViewController: ContactsInputView {
         }
     }
     
-    func highlightEmail(isCorrect: Bool) {
-        wrongEmailLabel.isHidden = isCorrect
-        if isCorrect {
+    func highlightEmail(isCorrect: Bool, isNotRuMail: Bool) {
+        let isCorrectEmailFormat: Bool = isCorrect && isNotRuMail
+        wrongEmailLabel.isHidden = isCorrectEmailFormat
+        if !isCorrectEmailFormat {
+            wrongEmailLabel.text = !isCorrect ?
+            R.Strings.contacts_input_wrong_email.localized() :
+            R.Strings.contacts_input_wrong_ru_email.localized()
+        }
+        if isCorrectEmailFormat {
             emailSeparatorView.backgroundColor = Constants.separatorColor
             emailTextField.textColor = .black
         } else {

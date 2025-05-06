@@ -13,4 +13,12 @@ class RoutingHandlerMock: RoutingHandlerProtocol {
     func popToPublicServices() {
         
     }
+    
+    func popToFeed() {
+        
+    }
+    
+    func popToDocuments() {
+        
+    }
 }
