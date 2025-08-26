@@ -107,7 +107,6 @@ private extension SingleSelectionPresenterTests {
         return SingleSelectionPresenter(
             view: view,
             configuration: configuration,
-            contextMenuProvider: nil,
             callback: callback
         )
     }

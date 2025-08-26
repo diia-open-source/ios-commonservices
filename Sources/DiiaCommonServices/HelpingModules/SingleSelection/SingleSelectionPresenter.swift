@@ -11,7 +11,6 @@ protocol SingleSelectionPresenterInterface: BasePresenter {
     var placeholder: String { get }
     var componentId: String { get }
 
-    func contextMenuButtonTapped()
     func itemSelected(at index: Int)
     func searchTextUpdated(_ text: String)
     func item(at index: Int) -> SearchItemModel?
@@ -39,25 +38,21 @@ final class SingleSelectionPresenter: SingleSelectionPresenterInterface {
 
     private var callback: (SearchItemModel) -> Void
     private var filteredItems: [SearchItemModel] = []
-    private var contextMenuProvider: ContextMenuProviderProtocol?
 
     private let configuration: SingleSelectionModuleConfiguration
 
     // MARK: - Init
     init(view: SingleSelectionView,
          configuration: SingleSelectionModuleConfiguration,
-         contextMenuProvider: ContextMenuProviderProtocol?,
          callback: @escaping (SearchItemModel) -> Void) {
         self.view = view
         self.configuration = configuration
-        self.contextMenuProvider = contextMenuProvider
         self.callback = callback
     }
 
     // MARK: - Public
     func configureView() {
         searchTextUpdated(.empty)
-        view.setupHeader(contextMenuProvider: contextMenuProvider)
     }
 
     func item(at index: Int) -> SearchItemModel? {
@@ -75,9 +70,5 @@ final class SingleSelectionPresenter: SingleSelectionPresenterInterface {
         callback(filteredItems[index])
 
         view.closeModule(animated: true)
-    }
-
-    func contextMenuButtonTapped() {
-        contextMenuProvider?.openContextMenu(in: view)
     }
 }

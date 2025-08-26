@@ -6,7 +6,6 @@ import DiiaUIComponents
 
 protocol SingleSelectionView: BaseView {
     func update()
-    func setupHeader(contextMenuProvider: ContextMenuProviderProtocol?)
 }
 
 final class SingleSelectionViewController: UIViewController {
@@ -67,6 +66,7 @@ final class SingleSelectionViewController: UIViewController {
     
     private func setupTopView() {
         topView.setupTitle(title: presenter.headerTitle)
+        topView.setupOnContext(callback: nil)
         topView.setupOnClose(callback: { [weak self] in
             self?.closeModule(animated: true)
         })
@@ -101,18 +101,6 @@ extension SingleSelectionViewController: SingleSelectionView {
     func update() {
         tableView.reloadData()
         updateEmptyViewVisibility()
-    }
-
-    func setupHeader(contextMenuProvider: ContextMenuProviderProtocol?) {
-        var callback: Callback?
-
-        if let contextMenuProvider {
-            let hasContextMenu = contextMenuProvider.hasContextMenu()
-            let openMenuCallback: Callback? = { [weak self] in self?.presenter.contextMenuButtonTapped() }
-            callback = hasContextMenu ? openMenuCallback : nil
-        }
-
-        topView.setupOnContext(callback: callback)
     }
 }
 

@@ -98,7 +98,6 @@ final class AddressSearchViewController: UIViewController {
     
     private func makeDropView(for parameter: AddressRequestParameter) -> DropContentView {
         let dropView = DropContentView()
-        let contextMenuProvider = presenter.getContextMenuProvider()
 
         dropView.configure(
             title: parameter.parameter.label,
@@ -122,7 +121,6 @@ final class AddressSearchViewController: UIViewController {
 
                 self?.open(module: SingleSelectionModule(
                     configuration: configuration,
-                    contextMenuProvider: contextMenuProvider,
                     callback: { [weak parameter, weak dropView] result in
                         guard let parameter = parameter,
                               let selectedItem = parameter.parameter.source?.items.first(where: { $0.id == result.code }),
@@ -242,6 +240,8 @@ extension AddressSearchViewController: AddressSearchView {
         case .textField:
             stackView.addArrangedSubview(makeTextView(for: parameter))
         }
+        
+        UIAccessibility.post(notification: .layoutChanged, argument: stackView.arrangedSubviews.last)
     }
     
     func removeInputs(after index: Int) {

@@ -1,3 +1,4 @@
+
 import Foundation
 
 enum R {
@@ -8,6 +9,9 @@ enum R {
         case general_ok
         case general_save
         case permissions_exit
+        
+        // MARK: - Accessibility
+        case general_accessibility_close
         
         // MARK: - Errors
         case error_otp_timeout

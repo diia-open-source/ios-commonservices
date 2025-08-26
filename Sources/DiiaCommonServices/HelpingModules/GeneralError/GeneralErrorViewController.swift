@@ -1,3 +1,4 @@
+
 import UIKit
 import DiiaMVPModule
 import DiiaUIComponents
@@ -58,6 +59,7 @@ final class GeneralErrorViewController: UIViewController, ChildSubcontroller, St
         
         closeButton.isAccessibilityElement = true
         closeButton.accessibilityTraits = .button
+        closeButton.accessibilityLabel = R.Strings.general_accessibility_close.localized()
     }
     
     // MARK: - Private Methods

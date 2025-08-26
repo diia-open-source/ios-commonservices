@@ -57,6 +57,8 @@ final class SingleSelectionCell: BaseTableNibCell {
 
         additionalLabel.isHidden = model.additionalText == nil
         additionalLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+        
+        accessibilityLabel = "\(model.title), \(model.additionalText ?? "")"
 
         divider.isHidden = false
         layer.cornerRadius = Constants.cornerRadius
@@ -86,6 +88,7 @@ final class SingleSelectionCell: BaseTableNibCell {
 
         setupMainStackView()
         setupDivider()
+        setupAccessibility()
     }
 
     private func setupMainStackView() {
@@ -114,6 +117,12 @@ final class SingleSelectionCell: BaseTableNibCell {
                 trailing: trailingAnchor,
                 size: CGSize(width: .zero, height: Constants.dividerHeight)
             )
+    }
+    
+    // MARK: - Accessibility
+    private func setupAccessibility() {
+        isAccessibilityElement = true
+        accessibilityTraits = .button
     }
 }
 

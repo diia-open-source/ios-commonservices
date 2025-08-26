@@ -1,3 +1,4 @@
+
 import UIKit
 import DiiaUIComponents
 
@@ -98,6 +99,10 @@ public final class SmallAlertViewController: UIViewController, ChildSubcontrolle
         
         alternativeButton.isAccessibilityElement = true
         alternativeButton.accessibilityTraits = .button
+        
+        closeButton.isAccessibilityElement = true
+        closeButton.accessibilityTraits = .button
+        closeButton.accessibilityLabel = R.Strings.general_accessibility_close.localized()
     }
     
     // MARK: - Private Methods

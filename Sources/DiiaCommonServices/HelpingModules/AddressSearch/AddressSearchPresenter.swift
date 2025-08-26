@@ -9,11 +9,9 @@ protocol AddressSearchAction: BasePresenter {
     func openContextMenu()
 	func select()
     func getScreenCode() -> String?
-    func getContextMenuProvider() -> ContextMenuProviderProtocol
 }
 
 final class AddressSearchPresenter: AddressSearchAction {
-
 	// MARK: - Properties
     unowned var view: AddressSearchView
     
@@ -55,10 +53,6 @@ final class AddressSearchPresenter: AddressSearchAction {
     func openContextMenu() {
         guard contextMenuProvider.hasContextMenu() else { return }
         contextMenuProvider.openContextMenu(in: view)
-    }
-    
-    func getContextMenuProvider() -> ContextMenuProviderProtocol {
-        return contextMenuProvider
     }
     
     func select() {

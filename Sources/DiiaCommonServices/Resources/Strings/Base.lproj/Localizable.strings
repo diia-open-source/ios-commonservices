@@ -9,6 +9,9 @@
 "general_save" = "Зберегти";
 "permissions_exit" = "Закрити";
 
+// MARK: - Accessibility
+"general_accessibility_close" = "Закрити";
+
 // MARK: - Errors
 "error_otp_timeout" = "Закінчився термін очікування відповіді";
 "error_request_not_found" = "Запит не зареєстровано у Дії";

@@ -1,3 +1,4 @@
+
 import UIKit
 import DiiaMVPModule
 import DiiaCommonTypes
@@ -83,6 +84,11 @@ public class TemplateHandler {
                 },
                 mainButtonType: .solid
             )
+        case .middleCenterIconBlackButtonAlert:
+            module = IconAlertModule(
+                viewModel: viewModel,
+                callback: callbackWithGlobalActions,
+                onClose: { state = .default })
         }
                 
         view.showChild(module: module)
@@ -126,6 +132,11 @@ public class TemplateHandler {
                 onClose: { state = .default },
                 mainButtonType: .solid
             )
+        case .middleCenterIconBlackButtonAlert:
+            module = IconAlertModule(
+                viewModel: viewModel,
+                callback: commonCallback,
+                onClose: { state = .default })
         }
         
         let alertController = module.viewController()
